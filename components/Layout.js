@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 
-const siteTitle = "calm";
+const siteTitle = "diary";
 
 export default function Layout({ children }) {
   return (
