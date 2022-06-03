@@ -23,9 +23,6 @@ section {
   background-color: #fff;
   padding: 2rem;
   border-radius: 12px;
-}
-
-section:not(:last-child) {
   margin-bottom: 45px;
 }
 
