@@ -1,12 +1,7 @@
 import fs from "fs";
 import glob from "glob-promise";
 import matter from "gray-matter";
-import { remark } from "remark";
-import remarkGfm from "remark-gfm";
-import remarkGithub from "remark-github";
-import remarkParse from "remark-parse";
-import remarkRehype from "remark-rehype";
-import rehypeStringify from "rehype-stringify";
+import markdownToHtml from 'zenn-markdown-html'
 
 export type Issue = any;
 
@@ -19,7 +14,7 @@ export async function getIssue({ issueNumber }: { issueNumber: number }) {
   const content = fs.readFileSync(filePath, { encoding: "utf-8" });
   const issueMatter = matter(content);
   const body = issueMatter.content;
-  const bodyHTML = await renderMarkdown(body);
+  const bodyHTML = markdownToHtml(body);
   return {
     body,
     bodyHTML,
@@ -56,7 +51,7 @@ export async function listIssueComments({
       const content = fs.readFileSync(filePath, { encoding: "utf-8" });
       const issueMatter = matter(content);
       const body = issueMatter.content;
-      const bodyHTML = await renderMarkdown(body);
+      const bodyHTML = markdownToHtml(body);
       return {
         body,
         bodyHTML,
@@ -75,18 +70,4 @@ function byCreatedAt(a: any, b: any) {
   } else {
     return 0;
   }
-}
-
-async function renderMarkdown(content: string) {
-  const result = await remark()
-    .use(remarkParse)
-    .use(remarkGfm)
-    .use(remarkGithub, {
-      repository: process.env.GITHUB_REPOSITORY || "github/dummy",
-    })
-    .use(remarkRehype)
-    .use(rehypeStringify)
-    .use(remarkGfm)
-    .process(content);
-  return result.toString();
 }

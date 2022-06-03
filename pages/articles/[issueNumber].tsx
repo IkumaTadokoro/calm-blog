@@ -9,6 +9,7 @@ import {
   type IssueComment,
 } from "../../lib/issue";
 import Time from "../../components/Time";
+import 'zenn-content-css'
 
 type Props = {
   issue: Issue;
@@ -17,7 +18,7 @@ type Props = {
 
 const ShowArticle: NextPage<Props> = ({ issue, issueComments }) => {
   return (
-    <article>
+    <article className="znc">
       <Head>
         <title>{issue.title}</title>
       </Head>
