@@ -27,6 +27,11 @@ export default function Layout({ children }) {
                 <a>Home</a>
               </Link>
             </li>
+            <li>
+              <Link href="https://ikuma-t.work">
+                <a>Blog</a>
+              </Link>
+            </li>
           </ul>
         </nav>
       </footer>
