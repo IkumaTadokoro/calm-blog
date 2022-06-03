@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 
-const siteTitle = "diary";
+const siteTitle = "ikuma-t/diary";
 
 export default function Layout({ children }) {
   return (
