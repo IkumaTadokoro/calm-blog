@@ -17,7 +17,7 @@ const Home: NextPage<Props> = ({ issues }) => {
           <li className="flex flex-col gap-1 block px-6 py-3 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100" key={issue.number}>
             <Time dateTime={issue.created_at} />
             <Link href={`/articles/${issue.number}`}>
-              <a className="font-semibold text-slate-600">{issue.title}</a>
+              <a className="font-semibold text-slate-600">{issue.title.length < 12 ? issue.title : `${issue.title.substring(0, 11)}...`}</a>
             </Link>
           </li>
         ))}

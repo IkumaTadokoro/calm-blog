@@ -9,7 +9,7 @@ export const Header = () => {
             <div>
               <h1 className="text-white">
                 <Link href="/">
-                  <a className="text-2xl md:text-3xl tracking-wide font-bold">ikuma-t/log</a>
+                  <a className="text-2xl md:text-3xl tracking-wide font-bold">ikuma-t/diary</a>
                 </Link>
               </h1>
               <p className="mt-4 text-sm text-slate-300">ikuma-tの作業ログです。</p>
