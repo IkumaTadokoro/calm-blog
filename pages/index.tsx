@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Link from "next/link";
+import { Container } from "../components/container"
 import { listIssues } from "../lib/issue";
 import Time from "../components/Time";
 
@@ -11,16 +12,18 @@ type Issue = any;
 
 const Home: NextPage<Props> = ({ issues }) => {
   return (
-    <section>
-      <ol>
+    <Container>
+      <ol className="grid gap-3 md:grid-cols-5">
         {issues.map((issue) => (
-          <li key={issue.number}>
+          <li className="flex flex-col gap-1 block px-6 py-3 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100" key={issue.number}>
             <Time dateTime={issue.created_at} />
-            <Link href={`/articles/${issue.number}`}>{issue.title}</Link>
+            <Link href={`/articles/${issue.number}`}>
+              <a className="font-semibold text-slate-600">{issue.title}</a>
+            </Link>
           </li>
         ))}
       </ol>
-    </section>
+    </Container>
   );
 };
 

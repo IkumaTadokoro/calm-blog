@@ -1,40 +1,18 @@
 import Head from "next/head";
-import Link from "next/link";
+import { Footer } from './footer'
+import { Header } from './header'
 
 const siteTitle = "ikuma-t/diary";
 
 export default function Layout({ children }) {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <header>
-        <nav>
-          <p>
-            <Link href="/">
-              <a>{siteTitle}</a>
-            </Link>
-          </p>
-        </nav>
-      </header>
-      <main>{children}</main>
-      <footer>
-        <nav>
-          <ul>
-            <li>
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="https://ikuma-t.work">
-                <a>Blog</a>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </footer>
-    </>
+      <Header />
+      <main className="flex-1 py-8">{children}</main>
+      <Footer />
+    </div>
   );
 }
