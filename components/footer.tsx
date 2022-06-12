@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { Container } from "./container"
 
 export const Footer = () => {
   return (
     <footer className="font-bold border-t-2 border-slate-100">
-      <Container>
+      <div className="max-w-6xl mx-auto px-5">
         <nav className="py-12">
           <ul className="flex justify-around text-white">
             <li>
@@ -19,7 +18,7 @@ export const Footer = () => {
             </li>
           </ul>
         </nav>
-      </Container>
+      </div>
     </footer>
   )
 }
