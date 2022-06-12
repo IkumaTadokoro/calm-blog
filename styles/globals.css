@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.markdown h2 {
+    @apply text-slate-600 font-semibold
+}
+
+.markdown h3 {
+    @apply text-slate-500 font-normal;
+}
+
+.markdown p, li {
+    @apply text-sm text-slate-700 tracking-wide leading-6
+}

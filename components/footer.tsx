@@ -3,10 +3,10 @@ import { Container } from "./container"
 
 export const Footer = () => {
   return (
-    <footer className="font-bold bg-stone-800 text-white">
+    <footer className="font-bold border-t-2 border-slate-100">
       <Container>
         <nav className="py-12">
-          <ul className="flex justify-around">
+          <ul className="flex justify-around text-white">
             <li>
               <Link href="/">
                 <a>Home</a>
