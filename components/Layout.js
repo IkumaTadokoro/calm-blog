@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { Footer } from './footer'
+import { Header } from './header'
 
 const siteTitle = "ikuma-t/diary";
 
@@ -10,15 +11,7 @@ export default function Layout({ children }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <header>
-        <nav>
-          <p>
-            <Link href="/">
-              <a>{siteTitle}</a>
-            </Link>
-          </p>
-        </nav>
-      </header>
+      <Header />
       <main>{children}</main>
       <Footer />
     </>
