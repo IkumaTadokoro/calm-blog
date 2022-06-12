@@ -18,12 +18,12 @@ type Props = {
 
 const ShowArticle: NextPage<Props> = ({ issue, issueComments }) => {
   return (
-    <div className="max-w-5xl mx-auto">
+    <div className="max-w-2xl mx-auto">
       <article className="znc markdown">
         <Head>
           <title>{issue.title}</title>
         </Head>
-        <section className="block py-6 md:px-16 px-8 bg-white md:rounded-lg border border-gray-200 shadow-md">
+        <section className="block py-6 md:px-12 px-8 bg-white md:rounded-lg border border-gray-200 shadow-md">
           <header>
             <Time dateTime={issue.created_at} />
             <h1 className="font-bold text-slate-600">{issue.title}</h1>
@@ -40,7 +40,7 @@ const ShowArticle: NextPage<Props> = ({ issue, issueComments }) => {
         </section>
         {issueComments.map((issueComment) => (
           <article className="mt-4" key={issueComment.id}>
-            <section className="block py-6 px-8 md:px-16 bg-white md:rounded-lg border border-gray-200 shadow-md">
+            <section className="block py-6 px-8 md:px-12 bg-white md:rounded-lg border border-gray-200 shadow-md">
               <header>
                 <Time dateTime={issueComment.created_at} />
               </header>

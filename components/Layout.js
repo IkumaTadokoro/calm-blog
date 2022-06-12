@@ -11,7 +11,7 @@ export default function Layout({ children }) {
         <title>{siteTitle}</title>
       </Head>
       <Header />
-      <main className="flex-1 py-8">{children}</main>
+      <main className="z-10 flex-1 py-8">{children}</main>
       <Footer />
     </div>
   );
