@@ -31,7 +31,7 @@ const ShowArticle: NextPage<Props> = ({ issue, issueComments }) => {
           <aside>
             <p className="text-sm text-slate-400">
               Posted by&nbsp;
-              <Link href={issue.user.html_url}>{issue.user.login}</Link>
+              {/*<Link href={issue.user.html_url}>{issue.user.login}</Link>*/}
               &nbsp;at&nbsp;
               <Link href={issue.html_url}>{`#${issue.number}`}</Link>.
             </p>
